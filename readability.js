@@ -3,13 +3,13 @@ function main(input) {
 		const cleanText = text.replace(/[,;:`'"<({[|_\-.]/g, ' ').toLowerCase();
 		const words = cleanText.split(/\s+/);
 		const wordCount = words.length;
-		console.log('Number of words:', wordCount);
+		//console.log('Number of words:', wordCount);
 
 		const sentenceCount = text.split(/[.!\?]+/).filter(sentence => sentence.trim() !== '').length;
-		console.log('Number of sentences:', sentenceCount);
+		//console.log('Number of sentences:', sentenceCount);
 
 		const syllableCount = countSyllables(input);
-		console.log('Number of syllables:', syllableCount);
+		//console.log('Number of syllables:', syllableCount);
 
 		if (wordCount === 0 || sentenceCount === 0 || syllableCount === 0) {
 		  return 'N/A';
@@ -17,8 +17,8 @@ function main(input) {
 
 		const averageWordsPerSentence = wordCount / sentenceCount;
 		const averageSyllablesPerWord = syllableCount / wordCount;
-		console.log('Average Syllables Per Word:', averageSyllablesPerWord);
-		console.log('Average Words Per Sentence:', averageWordsPerSentence);
+		//console.log('Average Syllables Per Word:', averageSyllablesPerWord);
+		//console.log('Average Words Per Sentence:', averageWordsPerSentence);
 
 		const gradeLevel = 0.39 * averageWordsPerSentence + 11.8 * averageSyllablesPerWord - 15.59;
 		const readingEaseScore = 206.835 - 1.015 * averageWordsPerSentence - 84.6 * averageSyllablesPerWord;
